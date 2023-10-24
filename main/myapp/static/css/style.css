@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+:root {
+  --background-color1: #fcf9f7;
+  --background-color2: #fcf5f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  /* background-color: rgb(243, 243, 238); */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+}
+
+.card,
+.card-body {
+  margin-top: 20px;
+  /* max-width: 65%; */
+  /* width: 70%; */
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Required for positioning the pseudo-element */
+}
+
+.card {
+  width: 70%;
+  overflow-y: auto; 
+}
+
+.card h2 {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  text-align: right;
+  position: relative;
+}
+
+/* .card h4:hover {
+  background-color: red;
+} */
+
+
+
+
+/* .card button[type="submit"] {
+  position: relative;
+  border:none;
+  width: 15%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--background-color2);
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 30px;
+} */
+
+.divider {
+  height: 2px;
+  background-color: #454444;
+  margin-bottom: 10px;
+}
+
+.mydiv1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mydiv1 h3 {
+  flex: 1;
+  text-align: center;
+}
+
+.task-div {
+  position: relative;
+  width: 100%;
+  background-color: var(--background-color1);
+  border-radius: 5px;
+  border: 1px solid rgb(37, 37, 37);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-div:hover {
+  background-color: var(--background-color2);
+}
+
+.task-div h2 {
+  padding: 10px;
+  font-size: 20px;
+  padding-bottom: 3px;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task-details p {
+  padding-left: 10px;
+  flex: 1;
+  text-align: left;
+}
+
+/* .task-div p {
+  margin-top: -10px;
+  flex: 1;
+  padding: 10px;
+  margin: 0;
+} */
+
+.card-body {
+  background-color: #ffffff;
+  width: 30%;
+}
+
+.card-body h2 {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.card-body h4 {
+  text-align: right;
+  position: relative;
+}
+
+.card-body input[type=text],
+.card-body input[type=password],
+.card-body textarea {
+  margin-top: 10px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%
+}
+
+.card-body input[type=submit] {
+  margin-top: 10px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.card-body input[type="submit"]:hover {
+  background-color: black;
+  color: white;
+}
+
+.mydiv1 h3{
+  color: black;
+  position: relative;
+}
+
+.mydiv1 h3::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* right: 0; */
+  height: 1px;
+  width: 0;
+  background-color: rgb(0, 0, 0);
+  transition: .3s;
+}
+
+.mydiv1 h3:hover::before {
+  width: 30%;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.card a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* right: 0; */
+  height: 1px;
+  width: 0;
+  background-color: rgb(0, 0, 0);
+  transition: .3s;
+}
+
+.card a:hover::before {
+  width: 100%;
+}
+
+.card-body button {
+  margin-top: 10px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.card-body button:hover {
+  background-color: black;
+  color: white;
+}

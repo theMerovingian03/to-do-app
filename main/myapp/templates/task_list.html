@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h2></h2>
+    <br>
+    <section class="card">
+        <h2>{{ request.user }}'s To-Do List</h2>
+        <div class="divider"></div>
+        <div class="mydiv1">
+            <h3 onclick="window.location.href='{% url 'task_list' %}'">All</h3>
+            <h3 onclick="window.location.href='{% url 'completed_tasks' %}'">Completed</h3>
+            <h3 onclick="window.location.href='{% url 'pending_tasks' %}'">Pending</h3>
+        </div>
+        {% if tasks %}
+        <p>Click on a task to edit/delete.</p>
+        {% for task in tasks %}
+        <div class="task-div" onclick="window.location.href='{% url 'task-update' pk=task.pk %}'">
+            <h2>{{ task.title }}</h2>
+            <div class="task-details">
+                {% if task.complete %}
+                <p>status: complete</p>
+                {% else %}
+                <p>status: pending</p>
+                {% endif %}
+                <p>date: {{ task.created }}</p>
+                <p>deadline: {{ task.deadline }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <p><a href="{% url 'task-create' %}">Add a new task</a></p>
+        <br>
+        <div class="divider"></div>
+        {% else %}
+        <h3>You have no tasks!</h3>
+        <br>
+        <p><a href="{% url 'task-create' %}">Add a new task</a></p>
+        {% endif %}
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    </section>
+</body>
+
+</html>
